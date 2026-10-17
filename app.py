@@ -18,7 +18,8 @@ import datetime as dt
 import psycopg
 from flask import Flask, request, jsonify
 
-ACCESSES = ["bot", "afk", "fish"]            # что бывает под ключом (готовка и ОЗУ всегда бесплатны)
+ACCESSES = ["bot", "afk", "fish", "test"]  # что бывает под ключом (готовка и ОЗУ всегда бесплатны);
+                                             # "test" - страница «Тест» с ботами на проверке
 app = Flask(__name__)
 
 DB_URL = os.environ.get("DATABASE_URL", "")
@@ -215,7 +216,7 @@ def admin_delete():
 
 @app.get("/")
 def home():
-    return "Majestic Tools license server is running.", 200
+    return "Majestic Tools license server is running. Accesses: " + ",".join(ACCESSES), 200
 
 
 if __name__ == "__main__":
