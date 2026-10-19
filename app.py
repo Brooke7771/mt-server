@@ -18,7 +18,7 @@ import datetime as dt
 import psycopg
 from flask import Flask, request, jsonify
 
-ACCESSES = ["bot", "afk", "fish", "wood", "mine", "test"]  # что бывает под ключом (готовка и ОЗУ всегда бесплатны);
+ACCESSES = ["bot", "afk", "fish", "wood", "mine", "gym", "test"]  # что бывает под ключом (готовка и ОЗУ всегда бесплатны);
                                              # "test" - страница «Тест» с ботами на проверке
 app = Flask(__name__)
 
